@@ -7,7 +7,8 @@ class Model(object): # implementa logica (fatta nei laboratori precedenti)
         self._Nmax = 100 # valore massimo da indovinare
         self._Tmax = 6 # numero max tentatuvi
         self._T = self._Tmax # tentativi rimanenti
-        self._segreto = None # numero da indovinare
+        self._segreto = None # numero da indovinare (cambia ogni partita)
+        #sei un bullo! (oggi no) Grazie, non ancora, ah ecco, mi sembrava strano
 
     def reset(self): # per creare partita (setta la scelta), resetta stato gioco
         """
@@ -15,10 +16,10 @@ class Model(object): # implementa logica (fatta nei laboratori precedenti)
         :return:
         """
         self._segreto = random.randint(0, self._Nmax) # crea valore randomico, da indovinare
-        self._T = self._Tmax # tutti tentativi rimasti (vite tutte); riprista tentativi
-        # print(self._segreto)
+        self._T = self._Tmax # tutti tentativi rimasti (vite tutte); ripristina tentativi
+        print(f"Il numero segreto è: {self._segreto}") # importante fare prove intermedie
 
-    def play(self, tentativo):
+    def play(self, tentativo): # prende in input tentativo dell'utente
         """
         Questo metodo riceve come argomento un valore intero, che sara il tentativo del giocatore,
         e lo confronta con il segreto
@@ -62,7 +63,7 @@ class Model(object): # implementa logica (fatta nei laboratori precedenti)
         return self._segreto
 
 
-# testo metodo
+# testo metodo, faccio prova intermedia per verificare che reset funzioni
 if __name__ == '__main__':
     m = Model()
     m.reset() # resetto modello

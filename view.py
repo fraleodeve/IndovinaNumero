@@ -1,12 +1,12 @@
 import flet as ft
 
-class View(object): # campi necessari
+class View(object): # campi necessari, crea pagina con titolo
     def __init__(self, page):
         self._page = page
-        self._page.title = "TdP 2024 - Indovina il Numero"
+        self._page.title = "TdP 2026 - Indovina il Numero" # titolo in alto alla pagina
         self._page.horizontal_alignment = 'CENTER'
         self._titolo = None
-        self._controller = None
+        self._controller = None # fissata a None, poi dopo la carica
 
     def caricaInterfaccia(self): # definizione oggetti grafici (pulsanti, textField, ...)
         self._titolo = ft.Text("Indovina il numero", color="blue", size=24)
@@ -63,7 +63,7 @@ class View(object): # campi necessari
         self._page.add(self._row1, self._row2, self._row3, self._lvoOut)
 
 
-        self._page.update()
+        self._page.update() # aggiorna
 
     def setController(self,controller): # far conoscere view e controller
         self._controller = controller
