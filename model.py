@@ -4,19 +4,20 @@ class Model(object): # implementa logica (fatta nei laboratori precedenti)
 
     # due possibilità: nuova partita o verifica numero
     def __init__(self):
-        self._Nmax = 100 # valore massimo da indovinare
-        self._Tmax = 6 # numero max tentatuvi
-        self._T = self._Tmax # tentativi rimanenti
+        self._Nmax = None # valore massimo da indovinare
+        self._Tmax = None # numero max tentatuvi
+        self._T = None # tentativi rimanenti
         self._segreto = None # numero da indovinare (cambia ogni partita)
+
         #sei un bullo! (oggi no) Grazie, non ancora, ah ecco, mi sembrava strano
 
     def reset(self): # per creare partita (setta la scelta), resetta stato gioco
         """
-        Questo metodo resetta stato del gioco. Imposta il numero da indovinare e riprista numero di tentativi
+        Questo metodo resetta stato del gioco. Imposta il numero da indovinare e ripristina numero di tentativi
         :return:
         """
-        self._segreto = random.randint(0, self._Nmax) # crea valore randomico, da indovinare
-        self._T = self._Tmax # tutti tentativi rimasti (vite tutte); ripristina tentativi
+        self._segreto = random.randint(1, self._Nmax) # crea valore randomico, da indovinare
+        # self._T = self._Tmax # tutti tentativi rimasti (vite tutte); ripristina tentativi
         print(f"Il numero segreto è: {self._segreto}") # importante fare prove intermedie
 
     def play(self, tentativo): # prende in input tentativo dell'utente
