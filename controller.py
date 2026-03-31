@@ -64,6 +64,7 @@ class Controller(object): # metodi che interagiscono con view e modello
     def reset(self, e): # e = evento che ha generato pressione pulsante
         # interfaccia tra view e modello (tentativo)
 
+        self.listaTentativi = []
         self._view._modalita.value = None
         self._view._assistita.value = None
         self._view.txtNmax.value = ""
@@ -131,13 +132,13 @@ class Controller(object): # metodi che interagiscono con view e modello
 
         elif risultato == -1:
             self._view._lvoOut.controls.append(ft.Text(f"Ritenta! Il numero è più piccolo di {tentativo}"))
-            self._view.fine.value = tentativo-1
+            self._view.fine.value = str(tentativo-1)
             self._view.update()
             return
 
         elif risultato == 1:
             self._view._lvoOut.controls.append(ft.Text(f"Ritenta! Il numero è più grande di {tentativo}"))
-            self._view.inizio.value = tentativo+1
+            self._view.inizio.value = str(tentativo+1)
             self._view.update()
             return
 

@@ -14,9 +14,9 @@ class View(object): # campi necessari, crea pagina con titolo
         # dobbiamo mettere 4 caselle di testo (alcune modificabili, altre no) e 2 pulsanti
 
         # visualizza numero massimo
-        self.txtNmax = ft.TextField(label = "Numero massimo",  # label è ciò che visualiizo sopra
+        self.txtNmax = ft.TextField(label = "Numero massimo",  # label è ciò che visualizzo sopra
                                     # value = self._controller.getNmax(), # chiedo a controller, non può parlare direttamente con model
-                                    disabled = True # serve affinchè non sia modificabile
+                                    disabled = True # serve affinché non sia modificabile
                                     )
 
         # visualizza numero tentaivi massimo
@@ -100,7 +100,7 @@ class View(object): # campi necessari, crea pagina con titolo
 
     def aggiuntaAssistenza(self):
         self.inizio = ft.TextField(label="Da",
-                                   value=1,
+                                   value="1",
                                    disabled=True
                                    )
         self.fine = ft.TextField(label="A",

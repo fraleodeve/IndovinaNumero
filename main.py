@@ -6,6 +6,6 @@ def main(page: ft.Page):
     v = View(page) # crea view
     c = Controller(v) # crea controller
     v.setController(c) # fa comunicare view e controller
-    v.caricaInterfaccia() # scrive controlli interaccia
+    v.caricaInterfaccia() # scrive controlli interfaccia
 
 ft.app(target=main)

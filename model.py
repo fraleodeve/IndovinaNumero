@@ -5,7 +5,7 @@ class Model(object): # implementa logica (fatta nei laboratori precedenti)
     # due possibilità: nuova partita o verifica numero
     def __init__(self):
         self._Nmax = None # valore massimo da indovinare
-        self._Tmax = None # numero max tentatuvi
+        self._Tmax = None # numero max tentativi
         self._T = None # tentativi rimanenti
         self._segreto = None # numero da indovinare (cambia ogni partita)
 
